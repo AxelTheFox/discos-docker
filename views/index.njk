@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi colección de discos</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="contenedor">
+    <header class="cabecera">
+      <div>
+        <p class="sobre">COLECCIÓN MUSICAL</p>
+        <h1>Mis discos</h1>
+        <p class="subtitulo">Un pequeño catálogo de música.</p>
+      </div>
+      <a class="boton" href="/discos/nuevo">＋ Añadir disco</a>
+    </header>
+
+    {% if discos.length %}
+      <section class="rejilla">
+        {% for disco in discos %}
+          <article class="tarjeta">
+            <div class="portada">♫</div>
+            <div class="datos">
+              <h2>{{ disco.titulo }}</h2>
+              <p class="artista">{{ disco.artista }}</p>
+              <p class="detalle">
+                {% if disco.anio %}{{ disco.anio }}{% else %}Año desconocido{% endif %}
+                {% if disco.genero %} · {{ disco.genero }}{% endif %}
+              </p>
+              <div class="acciones">
+                <a class="boton-secundario" href="/discos/{{ disco._id }}/editar">Editar</a>
+                <form method="post" action="/discos/{{ disco._id }}/eliminar"
+                      onsubmit="return confirm('¿Seguro que quieres eliminar este disco?')">
+                  <button class="boton-peligro" type="submit">Eliminar</button>
+                </form>
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </section>
+    {% else %}
+      <section class="vacio">
+        <div class="nota">♫</div>
+        <h2>Tu colección está vacía</h2>
+        <p>Añade el primer disco para empezar.</p>
+        <a class="boton" href="/discos/nuevo">Añadir primer disco</a>
+      </section>
+    {% endif %}
+  </main>
+</body>
+</html>

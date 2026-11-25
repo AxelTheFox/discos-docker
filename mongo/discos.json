@@ -1,0 +1,32 @@
+[
+  {
+    "titulo": "Thriller",
+    "artista": "Michael Jackson",
+    "anio": 1982,
+    "genero": "Pop"
+  },
+  {
+    "titulo": "Abbey Road",
+    "artista": "The Beatles",
+    "anio": 1969,
+    "genero": "Rock"
+  },
+  {
+    "titulo": "21",
+    "artista": "Adele",
+    "anio": 2011,
+    "genero": "Pop"
+  },
+  {
+    "titulo": "Nevermind",
+    "artista": "Nirvana",
+    "anio": 1991,
+    "genero": "Grunge"
+  },
+  {
+    "titulo": "Back to Black",
+    "artista": "Amy Winehouse",
+    "anio": 2006,
+    "genero": "Soul"
+  }
+]

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ titulo }}</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="contenedor formulario-contenedor">
+    <a class="volver" href="/">← Volver a la colección</a>
+    <section class="panel">
+      <p class="sobre">COLECCIÓN MUSICAL</p>
+      <h1>{{ titulo }}</h1>
+      <form method="post" action="{{ accion }}" class="formulario">
+        <label for="titulo">Título *</label>
+        <input id="titulo" name="titulo" required value="{{ disco.titulo or '' }}" placeholder="Ej. Thriller">
+
+        <label for="artista">Artista *</label>
+        <input id="artista" name="artista" required value="{{ disco.artista or '' }}" placeholder="Ej. Michael Jackson">
+
+        <label for="anio">Año</label>
+        <input id="anio" name="anio" type="number" min="1900" max="2100" value="{{ disco.anio or '' }}" placeholder="Ej. 1982">
+
+        <label for="genero">Género</label>
+        <input id="genero" name="genero" value="{{ disco.genero or '' }}" placeholder="Ej. Pop">
+
+        <button class="boton" type="submit">Guardar disco</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
